@@ -26,12 +26,13 @@ _ps. Idea taken from the [GIT flight rules](https://github.com/k88hudson/git-fli
 
 - [Licensing](#licensing)
   - [I want to check if my project is REUSE compliant](#i-want-to-check-if-my-project-is-reuse-compliant)
-  - [I want to know which license my files have](#i-want-to-know-which-license-my-files-have)
+  - [I want to know which license a certain file has](#i-want-to-know-which-license-a-certain-file-has)
   - [I want to make my GPL-3 project REUSE compliant](#i-want-to-make-my-gpl-3-project-reuse-compliant)
   - [I want to make my multi-license project REUSE compliant](#i-want-to-make-my-multi-license-project-reuse-compliant)
   - [I want to add a comment header to each file](#i-want-to-add-a-comment-header-to-each-file)
     - [I want to add a comment header to each file in my Maven/Java project](#i-want-to-add-a-comment-header-to-each-file-in-my-mavenjava-project)
   - [I want to define a pattern to associate various files to a license](#i-want-to-define-a-pattern-to-associate-various-files-to-a-license)
+  - [I want to exclude some files from REUSE compliance checking](#i-want-to-exclude-some-files-from-reuse-compliance-checking)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -52,7 +53,7 @@ which files are not compliant to the [REUSE Initiative](https://reuse.software/)
 
 The result shows a list of files, that do not have licenses associated.
 
-### I want to know which license my files have
+### I want to know which license a certain file has
 
 I want to know, which license is associated to the files `README.md` and `example/path/filename.c`.
 We use the [reuse](https://reuse.gitlab.io) tool again:
@@ -220,4 +221,20 @@ This means, that per default files are licensed under `GPL-3.0-or-later`, except
 ending in `.md`, which are licensed with `CC-BY-SA-4.0`. For details on how to write a
 `debian/copyright` file, see Debian's
 [packaging manual](https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/).
+
+### I want to exclude some files from REUSE compliance checking
+
+The tool [reuse](https://reuse.gitlab.io) ignores all files defined in `.gitignore`, license-specific
+folders or files, like `LICENSE`, `LICENCE`, `*.license`, `*.spdx`, `COPYING`, and VCS-specific files
+(`.gitignore`, `.git`, `.svn`).
+
+If you want to ignore some files, that you do not need to put into your git repository, do:
+
+    vim .gitignore
+
+...and add patterns there.
+
+Otherwise, generate a [default license](#i-want-to-define-a-pattern-to-associate-various-files-to-a-license)
+for your whole repository as `debian/copyright` file. This does not ignore the file, but associates a default
+license, which is necessary to be REUSE compliant, if you put that file into your source code.
 
