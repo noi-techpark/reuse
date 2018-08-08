@@ -2,8 +2,9 @@
 
 #### What are "flight rules"?
 
-A [guide for astronauts](https://www.jsc.nasa.gov/news/columbia/fr_generic.pdf) (now, programmers contributing to the
-[REUSE Initiative](https://reuse.software/)) about what to do when things go wrong, _or must be executed with no delay_.
+A [guide for astronauts](https://www.jsc.nasa.gov/news/columbia/fr_generic.pdf) (now, programmers making software
+compliant to the [REUSE Initiative](https://reuse.software/)) about what to do when things go wrong, _or must be
+executed with no delay_.
 
 > *Flight Rules* are the hard-earned body of knowledge recorded in manuals that list, step-by-step, what to do if X
 > occurs, and why. Essentially, they are extremely detailed, scenario-specific standard operating procedures. [...]
