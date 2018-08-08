@@ -224,9 +224,13 @@ ending in `.md`, which are licensed with `CC-BY-SA-4.0`. For details on how to w
 
 ### I want to exclude some files from REUSE compliance checking
 
-The tool [reuse](https://reuse.gitlab.io) ignores all files defined in `.gitignore`, license-specific
-folders or files, like `LICENSE`, `LICENCE`, `*.license`, `*.spdx`, `COPYING`, and VCS-specific files
-(`.gitignore`, `.git`, `.svn`).
+It is not REUSE compliant, if you do not associate a license to a file inside your source code.
+Nevertheless, certain files are ignored by [reuse](https://reuse.gitlab.io), that are either
+license-specific, or not version-controlled by any VCS.
+
+In detail, the tool [reuse](https://reuse.gitlab.io) ignores all files defined in `.gitignore`,
+license-specific folders or files, like `LICENSE`, `LICENCE`, `*.license`, `*.spdx`, `COPYING`,
+and VCS-specific files, as for instance `.gitignore`, `.git`, and `.svn`.
 
 If you want to ignore some files, that you do not need to put into your git repository, do:
 
@@ -236,5 +240,5 @@ If you want to ignore some files, that you do not need to put into your git repo
 
 Otherwise, generate a [default license](#i-want-to-define-a-pattern-to-associate-various-files-to-a-license)
 for your whole repository as `debian/copyright` file. This does not ignore the file, but associates a default
-license, which is necessary to be REUSE compliant, if you put that file into your source code.
+license, which is necessary to be REUSE compliant.
 
