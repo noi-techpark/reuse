@@ -29,6 +29,7 @@ _ps. Idea taken from the [GIT flight rules](https://github.com/k88hudson/git-fli
   - [I want to make my GPL-3 project REUSE compliant](#i-want-to-make-my-gpl-3-project-reuse-compliant)
   - [I want to make my multi-license project REUSE compliant](#i-want-to-make-my-multi-license-project-reuse-compliant)
   - [I want to add a comment header to each file](#i-want-to-add-a-comment-header-to-each-file)
+    - [I want to add a comment header to each file in my Maven/Java project](#i-want-to-add-a-comment-header-to-each-file-in-my-mavenjava-project)
   - [I want to define a pattern to associate various files to a license](#i-want-to-define-a-pattern-to-associate-various-files-to-a-license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -128,6 +129,52 @@ warranty information, as follows:
 NB: Do not forget the SPDX identifier at the end. Add multiple `Copyright` lines, if you
 have more than one copyright holder over several years.
 
+#### I want to add a comment header to each file in my Maven/Java project
+
+We use [mycila's maven plugin](http://code.mycila.com/license-maven-plugin/) to add license headers to each file.
+
+Copy [header templates](https://github.com/mycila/license-maven-plugin/tree/master/license-maven-plugin/src/main/resources/com/mycila/maven/plugin/license/templates)
+for your chosen license to `LICENSES/templates/`:
+
+	mkdir -p LICENSES/templates
+	cd LICENSES/templates
+    wget https://raw.githubusercontent.com/mycila/license-maven-plugin/master/license-maven-plugin/src/main/resources/com/mycila/maven/plugin/license/templates/GPL-3.txt -O GPL-3.0-header.txt
+
+Open your `pom.xml` and add the following section to the `<build><plugins>` path:
+
+    <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+            <header>../LICENSES/templates/GPL-3.0-header.txt</header>
+            <properties>
+                <owner>IDM Südtirol - Alto Adige</owner>
+                <email>info@idm-suedtirol.com</email>
+            </properties>
+            <excludes>
+                <exclude>bin/**</exclude>
+                <exclude>**/README</exclude>
+                <exclude>src/test/resources/**</exclude>
+                <exclude>src/main/resources/**</exclude>
+            </excludes>
+        </configuration>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>check</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+
+Configure it as you like, with `<exclude>` patterns and additional `<properties>`. For a full list of possibilities,
+see http://code.mycila.com/license-maven-plugin/.
+
+Update license headers:
+
+    mvn license:format
+
 
 ### I want to define a pattern to associate various files to a license
 
@@ -147,18 +194,14 @@ An example could be as follows:
     Files: *
     Copyright: 2000-2017 John Doe <jdoe@example.com>
                2018 IDM Südtirol - Alto Adige (info@idm-suedtirol.com)
-    License: GPL-2.0-only
+    License: GPL-3.0-or-later
 
     Files: *.md
     Copyright: 2018 IDM Südtirol - Alto Adige (info@idm-suedtirol.com)
     License: CC-BY-SA-4.0
 
-    Files: *.sh
-    Copyright: 2018 IDM Südtirol - Alto Adige (info@idm-suedtirol.com)
-    License: GPL-3.0-or-later
-
-This means, that per default files are licensed under `GPL-2.0-only`, except for files
-ending in `.md`, which are licensed with `CC-BY-SA-4.0`, and all ending with `.sh` as
-`GPL-3.0-or-later`. For details on how to write a `debian/copyright` file, see the
+This means, that per default files are licensed under `GPL-3.0-or-later`, except for files
+ending in `.md`, which are licensed with `CC-BY-SA-4.0`. For details on how to write a
+`debian/copyright` file, see Debian's
 [packaging manual](https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/).
 
