@@ -26,6 +26,7 @@ _ps. Idea taken from the [GIT flight rules](https://github.com/k88hudson/git-fli
 
 - [Licensing](#licensing)
   - [I want to check if my project is REUSE compliant](#i-want-to-check-if-my-project-is-reuse-compliant)
+  - [I want to know which license my files have](#i-want-to-know-which-license-my-files-have)
   - [I want to make my GPL-3 project REUSE compliant](#i-want-to-make-my-gpl-3-project-reuse-compliant)
   - [I want to make my multi-license project REUSE compliant](#i-want-to-make-my-multi-license-project-reuse-compliant)
   - [I want to add a comment header to each file](#i-want-to-add-a-comment-header-to-each-file)
@@ -50,6 +51,21 @@ which files are not compliant to the [REUSE Initiative](https://reuse.software/)
     reuse lint
 
 The result shows a list of files, that do not have licenses associated.
+
+### I want to know which license my files have
+
+I want to know, which license is associated to the files `README.md` and `example/path/filename.c`.
+We use the [reuse](https://reuse.gitlab.io) tool again:
+
+    reuse license README.md example/path/filename.c
+
+The output is a list of files with associated licenses, like this:
+
+    README.md
+    CC-BY-SA-4.0
+
+    example/path/filename.c
+    GPL-3.0
 
 ### I want to make my GPL-3 project REUSE compliant
 
