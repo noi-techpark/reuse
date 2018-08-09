@@ -27,7 +27,7 @@ _ps. Idea taken from the [GIT flight rules](https://github.com/k88hudson/git-fli
 - [Licensing](#licensing)
   - [I want to check if my project is REUSE compliant](#i-want-to-check-if-my-project-is-reuse-compliant)
   - [I want to know which license a certain file has](#i-want-to-know-which-license-a-certain-file-has)
-  - [I want to make my GPL-3 project REUSE compliant](#i-want-to-make-my-gpl-3-project-reuse-compliant)
+  - [I want to make my single-license project REUSE compliant](#i-want-to-make-my-single-license-project-reuse-compliant)
   - [I want to make my multi-license project REUSE compliant](#i-want-to-make-my-multi-license-project-reuse-compliant)
   - [I want to add a comment header to each file](#i-want-to-add-a-comment-header-to-each-file)
     - [I want to add a comment header to each file in my Maven/Java project](#i-want-to-add-a-comment-header-to-each-file-in-my-mavenjava-project)
@@ -68,10 +68,15 @@ The output is a list of files with associated licenses, like this:
     example/path/filename.c
     GPL-3.0
 
-### I want to make my GPL-3 project REUSE compliant
+### I want to make my single-license project REUSE compliant
 
-Download the GPL-3 license from https://github.com/spdx/license-list to your project's
-source code. Then, add the valid [SPDX license identifier](https://spdx.org/licenses/).
+First of all, [choose an open source license](https://choosealicense.com/).
+
+Let's assume you decided to choose the [GNU GPL v3.0](https://choosealicense.com/licenses/gpl-3.0/)
+for your single-license project.
+
+Download it from https://github.com/spdx/license-list to your project's source code. Then, add the
+valid [SPDX license identifier](https://spdx.org/licenses/).
 
     wget https://raw.githubusercontent.com/spdx/license-list/master/GPL-3.0.txt -O LICENSE
     sed -i "1iValid-License-Identifier: GPL-3.0" LICENSE
@@ -87,7 +92,13 @@ In-depth information can be found within the *reuse* [documentation](https://reu
 
 ### I want to make my multi-license project REUSE compliant
 
-If you have more than one license, create a LICENSES folder and put your license texts there.
+First of all, [choose an open source license](https://choosealicense.com/).
+
+Let's assume you decided to choose the [GNU GPL v3.0](https://choosealicense.com/licenses/gpl-3.0/)
+for your source code and [CC-BY-SA-4.0](https://choosealicense.com/licenses/cc-by-sa-4.0/) for your
+documentation.
+
+Create a LICENSES folder and put your license texts there.
 
     mkdir LICENSES
     wget https://raw.githubusercontent.com/spdx/license-list/master/GPL-3.0.txt -O LICENSES/GPL-3.0.txt
