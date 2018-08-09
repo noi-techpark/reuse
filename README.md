@@ -27,6 +27,7 @@ _ps. Idea taken from the [GIT flight rules](https://github.com/k88hudson/git-fli
 - [Licensing](#licensing)
   - [I want to check if my project is REUSE compliant](#i-want-to-check-if-my-project-is-reuse-compliant)
   - [I want to know which license a certain file has](#i-want-to-know-which-license-a-certain-file-has)
+  - [I want to create an inventory for included software](#i-want-to-create-an-inventory-for-included-software)
   - [I want to make my single-license project REUSE compliant](#i-want-to-make-my-single-license-project-reuse-compliant)
   - [I want to make my multi-license project REUSE compliant](#i-want-to-make-my-multi-license-project-reuse-compliant)
   - [I want to add a comment header to each file](#i-want-to-add-a-comment-header-to-each-file)
@@ -67,6 +68,15 @@ The output is a list of files with associated licenses, like this:
 
     example/path/filename.c
     GPL-3.0
+
+### I want to create an inventory for included software
+
+I want to create an _inventory_ or _bill of materials_ of my project, to provide general licensing
+information and to show which files have which license.
+
+We use the [reuse](https://reuse.gitlab.io) tool:
+
+     reuse compile > inventory.spdx
 
 ### I want to make my single-license project REUSE compliant
 
