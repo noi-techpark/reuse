@@ -2,18 +2,18 @@ SPDXVersion: SPDX-2.1
 DataLicense: CC0-1.0
 SPDXID: SPDXRef-DOCUMENT
 DocumentName: reuse-idm
-DocumentNamespace: http://spdx.org/spdxdocs/spdx-v2.1-9fff4e5a-846e-458d-842c-d8be62745833
+DocumentNamespace: http://spdx.org/spdxdocs/spdx-v2.1-59a9949c-46e1-4996-a111-22f766acf779
 Creator: Person: Anonymous ()
 Creator: Organization: Anonymous ()
 Creator: Tool: reuse-0.3.0
-Created: 2018-08-09T14:23:42Z
+Created: 2018-08-09T14:27:42Z
 CreatorComment: <text>This document was created automatically using available reuse information consistent with the REUSE Initiative.</text>
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 Relationship: SPDXRef-DOCUMENT describes SPDXRef-c903674f6643b9821487ceb9dc8fcfaa7377d026
 
 FileName: ./README.md
 SPDXID: SPDXRef-8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-FileChecksum: SHA1: 71871373bd37952f0f887c5b61d49a50476c937a
+FileChecksum: SHA1: ef8908ecd4483fd7ae69cbb7d28d9163f0c38aa2
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: CC-BY-SA-4.0
 FileCopyrightText: <text>2018 IDM Südtirol - Alto Adige (info@idm-suedtirol.com)</text>
@@ -24,37 +24,3 @@ FileChecksum: SHA1: 5b0c370cb6069317c1f5a152c82ce7ae83bc36fe
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: GPL-3.0
 FileCopyrightText: <text>2018 IDM Südtirol - Alto Adige (info@idm-suedtirol.com)</text>
-
-LicenseID: LicenseRef-Unknown0
-LicenseName: NOASSERTION
-ExtractedText: <text>SPDXVersion: SPDX-2.1
-DataLicense: CC0-1.0
-SPDXID: SPDXRef-DOCUMENT
-DocumentName: reuse-idm
-DocumentNamespace: http://spdx.org/spdxdocs/spdx-v2.1-f0bffc20-5007-407a-9b9a-5783db658c0c
-Creator: Person: Anonymous ()
-Creator: Organization: Anonymous ()
-Creator: Tool: reuse-0.3.0
-Created: 2018-08-09T14:13:22Z
-CreatorComment: <text>This document was created automatically using available reuse information consistent with the REUSE Initiative.</text>
-Relationship: SPDXRef-DOCUMENT describes SPDXRef-8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-Relationship: SPDXRef-DOCUMENT describes SPDXRef-c903674f6643b9821487ceb9dc8fcfaa7377d026
-
-FileName: ./README.md
-SPDXID: SPDXRef-8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-FileChecksum: SHA1: 71871373bd37952f0f887c5b61d49a50476c937a
-LicenseConcluded: NOASSERTION
-LicenseInfoInFile: CC-BY-SA-4.0
-FileCopyrightText: <text>2018 IDM Südtirol - Alto Adige (info@idm-suedtirol.com)</text>
-
-FileName: ./build+push.sh
-SPDXID: SPDXRef-c903674f6643b9821487ceb9dc8fcfaa7377d026
-FileChecksum: SHA1: 5b0c370cb6069317c1f5a152c82ce7ae83bc36fe
-LicenseConcluded: NOASSERTION
-LicenseInfoInFile: GPL-3.0
-FileCopyrightText: <text>2018 IDM Südtirol - Alto Adige (info@idm-suedtirol.com)</text>
-
-LicenseID: LicenseRef-Unknown0
-LicenseName: NOASSERTION
-ExtractedText: <text></text>
-</text>
